@@ -10,7 +10,6 @@
 <body>
     <?php
     $passReal = 1111;
-
     
     if (!isset($_POST['pass'])) {
         $pass = 00000;
@@ -38,7 +37,7 @@
                 <input type="number" name="pass">
             </label>
             <br>
-            <input type="hidden" name="intentosRestantes" value="<?php $intentosRestantes; ?>">
+            <input type="hidden" name="intentosRestantes" value="<?php echo $intentosRestantes; ?>">
             <input type="submit" value="intentar">
         <?php
 
