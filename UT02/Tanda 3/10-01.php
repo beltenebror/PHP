@@ -10,32 +10,36 @@
 <body>
     <p>Media de números positivos (se parará cuando introduzca un número negativo)</p>
     <?php
-    if (!isset($_POST['n'])) {
-        $n = 0;
-        $total = 0;
-        $cuentaNumeros = 0;
-    } else {
-        $n = $_POST['n'];
+    if (isset($_POST['numero'])) {
+        $numero = $_POST['numero'];
+        $contador = $_POST['contador'];
         $total = $_POST['total'];
-        $cuentaNumeros = $_POST['cuentaNumeros'];
+    } else {
+        $numero = 0;
+        $contador = 0;
+        $total = 0;
     }
-    if ($n >= 0) {
-        $total += $n;
-        $cuentaNumeros++;
+
+    if ($numero >= 0) {
+        $total = $total + $numero;
+        $contador = $contador + 1;
     ?>
+
         <form action="10-01.php" method="post">
-            <input type="number" name="n" autofocus>
-            <input type="hidden" name="total" value="<?php echo $total; ?>">
-            <input type="hidden" name="cuentaNumeros" value="<?php echo $cuentaNumeros; ?>">
-            <input type="submit" value="Aceptar">
+            <label>
+                Introduce número:
+                <input type="number" name="numero" autofocus>
+            </label>
+            <input type="hidden" name="contador" value="<?php echo $contador ?>">
+            <input type="hidden" name="total" value="<?php echo $total ?>">
+            <input type="submit" value="Enviar">
         </form>
+
     <?php
     } else {
     ?>
-        <br><br>La media de los números introducidos es <?php echo $total / ($cuentaNumeros - 1); ?>
-        <br><br>
+    <p>La media de los números anteriores es <?php echo $total/($contador-1) ?></p>
     <?php
-    echo $_cuentaNumeros;
     }
     ?>
 </body>
