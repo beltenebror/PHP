@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ercicio 7 || Tanda 4</title>
+    <title>Ejercicio 7 || Tanda 4</title>
 </head>
 
 <body>
@@ -35,13 +35,28 @@
 
     for($i=0; $i<20; $i++)
     {
-        if($array[$i])
+        if($array[$i]%2==0)
         {
-            
+            array_push($arrayPares,$array[$i]);
         }
         else{
-
+            array_push($arrayImpares,$array[$i]);
         }
+    }
+
+    echo "<p>Array pares: </p>";
+    echo "<p>";
+    for($i=0; $i<count($arrayPares); $i++)
+    {
+        echo " " . $arrayPares[$i] . " ";
+    }
+    echo "</p>";
+
+    echo "<p>Array impares: </p>";
+    echo "<p>";
+    for($i=0; $i<count($arrayImpares); $i++)
+    {
+        echo " " . $arrayImpares[$i] . " ";
     }
     echo "</p>";
 

@@ -12,6 +12,7 @@
     <form action="recibirArray.php" method="post">
     <input type="hidden" name="cadena" size="0" value="<?php echo implode(",",$array) ?>">
     <input type="submit" value="vamos">       <!-- implode transforma en string"1,2,3,4,5,6,7,8,9" -->
-    </form>
+    </form>                                  <!-- Ojo al enviar un array vacio que se genera la posicion 0 vacia-->
+                                            <!-- y si intentamos rellenar con un push sigue a partir de la 1-->
 </body>
 </html>
