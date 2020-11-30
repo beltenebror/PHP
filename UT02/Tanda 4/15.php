@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 15 || Tanda 4</title>
     <style>
-        td,
-        table {
+        td, table {
             border: 1px solid blue;
             border-collapse: collapse;
             text-align: center;
         }
+        body{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        div{
+            text-align: center;
+            margin:auto;
+        }
+
     </style>
 </head>
 
@@ -37,6 +45,7 @@
 
 
     //pintar original y rellenar girado
+    echo "<div>";
     echo "<p> Original </p>";
     echo "<table>";
     for ($i = 0; $i < 12; $i++) {
@@ -48,6 +57,8 @@
         echo "</tr>";
     }
     echo "</table>";
+    echo "</div>";
+
 
 
     //Intentar rotar la línea de arriba
@@ -85,7 +96,9 @@
     }
 
     //pintar original y rellenar girado
-    echo "<p> despues </p>";
+    echo "<div>";
+
+    echo "<p> Resultado </p>";
     echo "<table>";
     for ($i = 0; $i < 12; $i++) {
         echo "<tr>";
@@ -96,6 +109,8 @@
         echo "</tr>";
     }
     echo "</table>";
+    echo "</div>"
+
 
 
 
