@@ -32,48 +32,29 @@
     ?>
 
     <?php
-        /////// Arrat temporal con los 54 números diferentes
-    $arrayTemporal = array();
-    $i = 0;
-    while ($i < 54) {
-        $n = rand(100, 999);
-        $repetido = false;
-        for ($j = 0; $j < $i; $j++) {
-            if ($arrayTemporal[$j] == $n) {
-                $repetido = true;
-                break;
-            }
-        }
-        if (!$repetido) {
-            array_push($arrayTemporal, $n);
-            $i++;
-        }
-    }   
+  
     /////////////// Creamos y asignamos el array bidimentional, además localizamos el mínimo
-    $array = array(
-        array(),
-        array(),
-        array(),
-        array(),
-        array(),
-        array(),
-        array(),
-        array(),
-        array()
-    );
+    $array = [];
     $k = 0;
     $min = 960;
     $minI;
     $minJ;
     for ($i = 0; $i < 9; $i++) {
         for ($j = 0; $j < 6; $j++) {
-            $array[$i][$j] = $arrayTemporal[$k];
-            if ($arrayTemporal[$k] < $min) {
-                $min = $arrayTemporal[$k];
-                $minI = $i;
-                $minJ = $j;
+            $n = rand(100, 999);
+            if(!in_array($n,$array))
+            {
+                $array[$i][$j]=$n;
+                if ($n < $min) {
+                    $min = $n;
+                    $minI = $i;
+                    $minJ = $j;
+                }
             }
-            $k++;
+            else{
+                $j--;
+            }
+           
         }
     }
 
