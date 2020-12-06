@@ -13,8 +13,8 @@
         <input type="submit" value="Calcular">
     </form>
     <?php
-        echo "<p> Recibe 12 euros por hora, ha trabajado ".$_POST[horas].
-        " horas así que su remuneración será de : ".($_POST[horas]*12)."€</p>"
+        echo "<p> Recibe 12 euros por hora, ha trabajado ".$_POST['horas'].
+        " horas así que su remuneración será de : ".($_POST['horas']*12)."€</p>"
     ?>
 </body>
 </html>
